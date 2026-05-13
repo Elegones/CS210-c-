@@ -67,8 +67,10 @@ class Program
 
                 entry1._entryNum=entryNum;
 
-                 Console.Write("Please enter the date :");
-                entry1._date=Console.ReadLine();
+                 //Console.Write("Please enter the date :");
+                //entry1._date=Console.ReadLine();
+                DateTime theCurrentTime =DateTime.Now;
+                 entry1._date= theCurrentTime.ToShortDateString();
                  Console.WriteLine(words);
                 entry1._prompt=words;
                  Console.Write("Please enter your response :");

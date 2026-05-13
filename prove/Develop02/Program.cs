@@ -11,23 +11,23 @@ class Program
         int Num =  randomGenerator.Next(1,5);
         if(Num==1)
         {
-            promt="test1";
+            promt="Which country should become the 51 sate";
         }
         if(Num==2)
         {
-            promt="test2";
+            promt="How much of our GDP should go to the millitary";
         }
          if(Num==3)
         {
-            promt="test3";
+            promt="Should we invade the ocean";
         }
          if(Num==4)
         {
-            promt="test4";
+            promt="Was the moon landing real";
         }
          if(Num==5)
         {
-            promt="test5";
+            promt="How did today go";
         }
        
         
@@ -70,7 +70,7 @@ class Program
                  Console.Write("Please enter the date :");
                 entry1._date=Console.ReadLine();
                  Console.WriteLine(words);
-                entry1._prompt=GivenPrompt();
+                entry1._prompt=words;
                  Console.Write("Please enter your response :");
                 entry1._respose=Console.ReadLine();
 

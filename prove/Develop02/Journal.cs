@@ -1,7 +1,9 @@
+using System;
+using System.IO;
 public class Journal()
 {
    
-
+    public string _fileName;
     public List<Entry> _entrys= new List<Entry>();
 
     public void DisplayJournals()
@@ -14,5 +16,6 @@ public class Journal()
 
     }
 
+    
 
 }

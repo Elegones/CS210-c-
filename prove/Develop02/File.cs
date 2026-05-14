@@ -16,8 +16,10 @@ public class File()
         foreach(Entry entry in _journal._entrys)
         {
         
-
+           OutputFile.WriteLine(entry._entryNum);
            OutputFile.WriteLine(entry._date);
+           OutputFile.WriteLine(entry._prompt);
+           OutputFile.WriteLine(entry._respose);
         
         }
 

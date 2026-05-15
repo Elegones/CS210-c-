@@ -16,6 +16,11 @@ public class Journal()
 
     }
 
+    public void ClearJ()
+    {
+        _entrys.Clear();
+
+    }
     
 
 }

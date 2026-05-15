@@ -43,8 +43,10 @@ class Program
     
        File f1 =new File();
        Journal j1 =new Journal();
+       Journal j2 =new Journal();
        int choice;
        int entryNum=0;
+       
         do
         {
              
@@ -55,6 +57,7 @@ class Program
             Console.WriteLine("3:Load");
             Console.WriteLine("4:Save");
             Console.WriteLine("5:Exit");
+
 
             choice=int.Parse(Console.ReadLine());
 
@@ -89,7 +92,13 @@ class Program
             
              else if(choice==3)
             {
+               Console.WriteLine("Enter file name");
+               f1._fileName=Console.ReadLine();
+               j1.ClearJ();
+
+               j1=f1.LoadingFile();
                
+              
             }
              else if(choice==4)
             {
@@ -98,10 +107,7 @@ class Program
                f1._journal=j1;
                f1.SavingFile();
             }
-            else 
-            {
-               Console.WriteLine("Error: Not valid choice try again");
-            }
+           
 
 
             

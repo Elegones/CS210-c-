@@ -98,6 +98,8 @@ class Program
 
                j1=f1.LoadingFile();
                
+               entryNum=j1.jLength();
+               
               
             }
              else if(choice==4)

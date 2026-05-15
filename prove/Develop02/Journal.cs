@@ -22,5 +22,12 @@ public class Journal()
 
     }
     
+     public int jLength()
+    {
+       
+        return _entrys.Count();
+
+    }
+    
 
 }

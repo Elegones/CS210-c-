@@ -11,7 +11,7 @@ using System;
 
     public void Display()
     {
-        Console.WriteLine($"Entry number# {_entryNum} \n Todays date is {_date}\n {_prompt}: {_respose} ");
+        Console.WriteLine($"Entry number# {_entryNum}\n Todays date is {_date}\n {_prompt}: {_respose} ");
     }
 
 

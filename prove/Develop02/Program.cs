@@ -8,7 +8,7 @@ class Program
     {
         string promt="";
         Random randomGenerator = new Random();
-        int Num =  randomGenerator.Next(5,5);
+        int Num =  randomGenerator.Next(1,5);
         if(Num==1)
         {
             promt="Which country should become the 51 sate";

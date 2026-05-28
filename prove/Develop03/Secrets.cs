@@ -11,5 +11,11 @@ class Secrets
 
     }
     
+     public void SetSecrets(string words)
+    {
+        _words=words;
+
+    }
+    
 
 }

@@ -4,7 +4,25 @@ class Program
 {
     static void Main(string[] args)
     {
+
+        Scripture script =new Scripture();
+        Referance reff =new Referance();
+        Secrets verse =new Secrets();
+
         
-        Console.WriteLine("Hello Develop03 Worlds!");
+
+       reff.SetRef("Alma","1","5");
+     //  string france= reff.GetRef();
+       
+       //Console.WriteLine(france);
+
+      script.SetScripRef(reff);
+      script.DisplayScripture();
+     
+
+
+       verse.SetSecrets("And it came to pass that he taught it so much that many did believe on his words, even so many that they began to support him and give him money");
+
+       
     }
 }

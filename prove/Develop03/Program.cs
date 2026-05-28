@@ -23,8 +23,20 @@ class Program
       script.SetVerse(verse);
       script.SetScripRef(reff);
       script.DisplayScripture();
-     
+      script.SSS();
+      while(1==1)
+      {
+        string enter=Console.ReadLine();
 
+
+       
+      if(enter==" ")
+      {
+        Console.WriteLine("1");
+        script.DisplaySec();
+      }
+     
+      }
 
        //verse.SetSecrets("And it came to pass that he taught it so much that many did believe on his words, even so many that they began to support him and give him money");
 

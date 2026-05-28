@@ -5,9 +5,14 @@ class Secrets
     private string _words;
     private bool _under=true;
 
+    
+
     public string GetSecrets()
     {
+        if (_under)
         return _words;
+        else 
+        return new string('_',_words.Length);
 
     }
     
@@ -16,6 +21,10 @@ class Secrets
         _words=words;
 
     }
-    
+    public void HideWord()
+    {
+        _under=false;
+
+    }
 
 }

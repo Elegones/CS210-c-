@@ -24,9 +24,20 @@ class Scripture
     
 
 
-    public  Referance GetScripture()
+   public void SSS()
     {
-        return _referance;
+       string[] _words= _verse.Split(" ");
+       foreach (string word in _words)
+        {
+             Secrets sect =new Secrets();
+            sect.SetSecrets(word);
+            
+            _secret.Add(sect); 
+       
+            
+          
+            
+        }
 
     }
 

@@ -32,7 +32,7 @@ class Program
        
       if(enter==" ")
       {
-        Console.WriteLine("1");
+       
         script.DisplaySec();
       }
      

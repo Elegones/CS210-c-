@@ -15,6 +15,19 @@ class Secrets
         return new string('_',_words.Length);
 
     }
+
+     public bool GetBool()
+    {/*
+      string w= new string('_',_words.Length);
+      if(_words==w)
+        {
+            return false;
+        }
+        else return true;
+       */
+      return _under;
+
+    }
     
      public void SetSecrets(string words)
     {

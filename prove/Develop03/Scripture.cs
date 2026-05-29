@@ -5,6 +5,8 @@ class Scripture
     private Referance _referance;
     private  List<Secrets> _secret = new List<Secrets>();
     private string _verse;
+    private bool _condition;
+    private int _length;
     Random randomGenerator = new Random();
     
 
@@ -28,14 +30,15 @@ class Scripture
 
    public void SSS()
     {
+        int w=0;
        string[] _words= _verse.Split(" ");
        foreach (string word in _words)
         {
-             Secrets sect =new Secrets();
+            Secrets sect =new Secrets();
             sect.SetSecrets(word);
             _secret.Add(sect); 
        
-            
+            w++;
           
             
         }
@@ -55,15 +58,56 @@ class Scripture
     }
 
     public void DisplaySec()
-    {
+    { 
+        
+        _length=_verse.Length;
+        int i=0;
+     
+       
+        
+      
         string displayText="";
-        foreach (Secrets secret in _secret )
+            while(i<3)
+        {
+              int x=0;
+               int Num=0;
+               //
+               Num =randomGenerator.Next(1,31);
+            
+            foreach (Secrets secret in _secret )
+            {   
+            x++;
+                
+            
+
+            
+            
+               
+                if (Num ==x)
+                    {
+                        _condition=secret.GetBool();
+                       if(_condition==true)
+                        {
+                            i=i+1;
+                        }
+                        secret.HideWord();
+                        
+                    }
+                
+
+            
+            
+
+                
+                
+
+
+            }
+        }
+
+       foreach (Secrets secret in _secret )
         {      
-          int Num =randomGenerator.Next(1,3);
-           if(Num==1)
-           {
-            secret.HideWord();
-           }
+         
 
             
 
@@ -74,8 +118,8 @@ class Scripture
 
              
         }
-        Console.WriteLine(_scripture);
-        Console.WriteLine(displayText);
+            Console.WriteLine(_scripture);
+            Console.WriteLine(displayText);
     }
 
 

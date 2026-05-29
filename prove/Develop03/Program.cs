@@ -85,19 +85,20 @@ class Program
 
         
       }
-      if(enter=="exit")
+     
+      unhidden=script.GetSBool();
+       if(enter=="exit")
       {
        
         unhidden=0;
 
         
       }
-      unhidden=script.GetSBool();
       
      
       }
 
-       //verse.SetSecrets("And it came to pass that he taught it so much that many did believe on his words, even so many that they began to support him and give him money");
+      
 
        
     }

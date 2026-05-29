@@ -17,14 +17,7 @@ class Secrets
     }
 
      public bool GetBool()
-    {/*
-      string w= new string('_',_words.Length);
-      if(_words==w)
-        {
-            return false;
-        }
-        else return true;
-       */
+    {
       return _under;
 
     }

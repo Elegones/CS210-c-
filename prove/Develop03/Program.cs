@@ -22,13 +22,17 @@ class Program
 
       script.SetVerse(verse);
       script.SetScripRef(reff);
-      script.DisplayScripture();
+       Console.WriteLine("To hide words hit enter, to exit type exit.");
+        script.DisplayScripture();
+      
       script.SSS();
       while(unhidden!=0)
       {
-        
+       
+
        
         string enter=Console.ReadLine();
+        Console.Clear();
 
 
        

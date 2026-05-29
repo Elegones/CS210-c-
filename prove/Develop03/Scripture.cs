@@ -7,12 +7,12 @@ class Scripture
     private string _verse;
     private bool _condition;
     private int _length;
-    Random randomGenerator = new Random();
+   private Random randomGenerator = new Random();
     
 
     private string _scripture;
 
-    //private Referance _referance = new Referance();
+
 
     
 
@@ -45,6 +45,19 @@ class Scripture
 
     }
 
+     public int GetSBool()
+    {int boll=0;
+          foreach (Secrets secret in _secret )
+            {      
+               _condition=secret.GetBool();
+                 if(_condition==true)
+                 {
+                     boll=boll+1;
+                 }
+            }
+      return boll;
+
+    }
     
 
 
@@ -67,12 +80,42 @@ class Scripture
         
       
         string displayText="";
+             int boll=0;
+             int secretNum=1;
+                foreach (Secrets secret in _secret )
+            {      
+               _condition=secret.GetBool();
+                 if(_condition==true)
+                 {
+                     boll=boll+1;
+                 }
+
+                 secretNum++;
+
+                
+            }
+
+             if(boll<3)
+                {
+                    i=3-boll;
+                    
+                }
+
+            if(boll==0)
+                {
+                    i=3;
+                }
+           
             while(i<3)
         {
+          
+              
+
+
               int x=0;
                int Num=0;
                //
-               Num =randomGenerator.Next(1,31);
+               Num =randomGenerator.Next(1,secretNum);
             
             foreach (Secrets secret in _secret )
             {   
@@ -93,10 +136,6 @@ class Scripture
                         secret.HideWord();
                         
                     }
-                
-
-            
-            
 
                 
                 

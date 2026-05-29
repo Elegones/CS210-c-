@@ -3,18 +3,60 @@ using System;
 class Program 
 {
     static void Main(string[] args)
-    {
-        string verse="And it came to pass that he taught it so much that many did believe on his words, even so many that they began to support him and give him money";
+    {  
+       string verse="";
+       string chapter="";
+       string book="";
+       string verseNum="";
+       Random randomGenerator = new Random();
+        int Num =  randomGenerator.Next(1,4);
+        if(Num==1)
+        {
+            book="Alma";
+            chapter="1";
+            verseNum="5";
+            verse="And it came to pass that he taught it so much that many did believe on his words, even so many that they began to support him and give him money";
+
+        }
+        if(Num==2)
+        {   
+            book="D&C";
+            chapter="6";
+            verseNum="36";
+            verse="Look unto me in every thought; doubt not, fear not.";
+        }
+         if(Num==3)
+        {
+            book="James";
+            chapter="1";
+            verseNum="5";
+            verse="If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.";
+        }
+         if(Num==4)
+        {
+            book="1 Nephi";
+            chapter="3";
+            verseNum="7";
+           
+            verse="And it came to pass that I, Nephi, said unto my father: I will go and do the things which the Lord hath commanded, for I know that the Lord giveth no commandments unto the children of men, save he shall prepare a way for them that they may accomplish the thing which he commandeth them.";
+        }
+      
+
+
+
+
+
+       // string verse="And it came to pass that he taught it so much that many did believe on his words, even so many that they began to support him and give him money";
         int unhidden=1;
         Scripture script =new Scripture();
         Referance reff =new Referance();
-        //Secrets verse =new Secrets();
+        
         Secrets sect =new Secrets();
 
 
         
 
-       reff.SetRef("Alma","1","5");
+       reff.SetRef(book,chapter,verseNum);
 
      //  string france= reff.GetRef();
        

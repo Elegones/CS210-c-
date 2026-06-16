@@ -1,4 +1,4 @@
-class  Activity
+public class  Activity
 {
    protected string _intro;
    protected string _outro;
@@ -13,6 +13,16 @@ class  Activity
         _prompts=prompts;
     }
 
+
+    
+
+    public Activity (int time)
+    {
+       
+        _time=time;
+        
+    }
+
        public Activity (string intro, string outro,int time)
     {
         _intro=intro;
@@ -20,23 +30,47 @@ class  Activity
         _time=time;
     }
 
-    public void CountDown()
+    public int CountDown()
     {
-        while(_time>0)
+        if (_time>0)
         {
-            Console.WriteLine(_time);
             _time=_time-1;
+            return _time;
+
         }
+        else return 0;
+        
     }
 
 
-    public void Animation()
-    {
+    public void CountDownAnimation()
+    {   
         
+        Console.Write($"Time left:{_time}");
+        while(_time!=0)
+        {
+        
+
+        _time=CountDown();
+
+        Thread.Sleep(500);
+
+        Console.Write("\b \b"); // Erase the + character
+        Console.Write($"{_time}"); // Replace it with the - character
+        }
     }
 
         public void DisplayPrompts()
     {
-        
+        Console.WriteLine();
+    }
+
+        public void DisplayIntro()
+    {
+        Console.WriteLine(_intro);
+    }
+        public void DisplayOutro()
+    {
+        Console.WriteLine(_outro);
     }
 }

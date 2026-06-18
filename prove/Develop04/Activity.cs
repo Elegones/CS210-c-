@@ -1,17 +1,15 @@
 public class  Activity
 {
    protected string _intro;
+   protected string _topic;
    protected string _outro;
    protected int _time;
-   protected List<string> _prompts=new List<string>();
+   protected string _prompt;
+   protected int _timeUse;
+   
+   
 
-   public Activity (string intro, string outro,int time, List<string> prompts)
-    {
-        _intro=intro;
-        _outro=outro;
-        _time=time;
-        _prompts=prompts;
-    }
+ 
 
 
     
@@ -20,14 +18,17 @@ public class  Activity
     {
        
         _time=time;
+        _timeUse=_time;
         
     }
 
-       public Activity (string intro, string outro,int time)
+       public Activity (string intro, string outro,int time,string topic)
     {
         _intro=intro;
         _outro=outro;
-        _time=time;
+         _time=time;
+        _timeUse=_time;
+        _topic=topic;
     }
 
     public int CountDown()
@@ -42,10 +43,27 @@ public class  Activity
         
     }
 
+    public void WaitingAnimation()
+    {   
+        _time =_timeUse;
+        Console.Write($"");
+        while(_time!=0)
+        {
+        
+
+        _time=CountDown();
+
+        Thread.Sleep(1000);
+
+        Console.Write("\b \b"); // Erase the + character
+        Console.Write($"{_time}"); // Replace it with the - character
+        }
+    }
+
 
     public void CountDownAnimation()
     {   
-        
+        _time =_timeUse;
         Console.Write($"Time left:{_time}");
         while(_time!=0)
         {
@@ -53,7 +71,7 @@ public class  Activity
 
         _time=CountDown();
 
-        Thread.Sleep(500);
+        Thread.Sleep(1000);
 
         Console.Write("\b \b"); // Erase the + character
         Console.Write($"{_time}"); // Replace it with the - character
@@ -62,15 +80,15 @@ public class  Activity
 
         public void DisplayPrompts()
     {
-        Console.WriteLine();
+        Console.WriteLine(_prompt);
     }
 
         public void DisplayIntro()
     {
-        Console.WriteLine(_intro);
+        Console.WriteLine($"Welcome to the {_topic} activity{_intro}");
     }
         public void DisplayOutro()
     {
-        Console.WriteLine(_outro);
+        Console.WriteLine($"{_outro} {_topic} activity");
     }
 }

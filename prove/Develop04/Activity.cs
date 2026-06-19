@@ -31,37 +31,53 @@ public class  Activity
         _topic=topic;
     }
 
-    public int CountDown()
+    public int CountDown(int time)
     {
-        if (_time>0)
+        
+        if (time>0)
         {
-            _time=_time-1;
-            return _time;
+            time=time-1;
+            return time;
 
         }
         else return 0;
         
     }
 
-    public void WaitingAnimation()
+    public void CountDownAnimation(int cycle)
     {   
-        _time =_timeUse;
+        int i=5;
+        //_time =_timeUse;
         Console.Write($"");
-        while(_time!=0)
+        Console.Write(cycle);
+        while(cycle!=0 && i>0)
         {
+            i=i-1;
+
+            
+            
+            
         
 
-        _time=CountDown();
+            _time=CountDown(_time);
+            cycle=CountDown(cycle);
 
-        Thread.Sleep(1000);
 
-        Console.Write("\b \b"); // Erase the + character
-        Console.Write($"{_time}"); // Replace it with the - character
+            Thread.Sleep(1000);
+
+           
+            Console.Write("\b \b"); // Erase the + character
+                
+            
+
+
+        
+            Console.Write($"{cycle}"); // Replace it with the - character
         }
     }
 
 
-    public void CountDownAnimation()
+    public void WaitingAnimation()
     {   
         _time =_timeUse;
         Console.Write($"Time left:{_time}");
@@ -69,7 +85,7 @@ public class  Activity
         {
         
 
-        _time=CountDown();
+        _time=CountDown(_time);
 
         Thread.Sleep(1000);
 

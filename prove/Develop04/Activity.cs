@@ -79,19 +79,30 @@ public class  Activity
 
     public void WaitingAnimation()
     {   
-        _time =_timeUse;
-        Console.Write($"Time left:{_time}");
-        while(_time!=0)
+        DateTime startTime = DateTime.Now;
+        DateTime futureTime = startTime.AddSeconds(5);
+        DateTime currentTime;
+
+        do
         {
-        
+            Console.Write("-");
 
-        _time=CountDown(_time);
+            Thread.Sleep(200);
 
-        Thread.Sleep(1000);
+             Console.Write("\b \b"); // Erase the + character
+            Console.Write("\\"); // Replace it with the - character
+            Thread.Sleep(200);
 
-        Console.Write("\b \b"); // Erase the + character
-        Console.Write($"{_time}"); // Replace it with the - character
-        }
+            Console.Write("\b \b"); // Erase the + character
+            Console.Write("|"); // Replace it with the - character
+            Thread.Sleep(200);
+            Console.Write("\b \b");
+            Console.Write("/");
+            Thread.Sleep(200);
+            Console.Write("\b \b"); // Replace it with the - character?
+             currentTime = DateTime.Now;
+        }while(currentTime<futureTime);
+
     }
 
         public void DisplayPrompts()

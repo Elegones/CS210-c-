@@ -74,6 +74,8 @@ public class Reflecting : Activity
 
 public void ReflectingLoop()
     {
+
+        List <string> thoughts= new List<string>();
         _prompt=GivenPrompt();
        
          DisplayIntro();
@@ -89,26 +91,51 @@ public void ReflectingLoop()
 
         while(currentTime<futureTime)
         {
-            string newThought="";
-            string oldThought="";
-            oldThought=_prompt;
-            _prompt=Giventhought();
-            newThought=_prompt;
-            Console.WriteLine(_prompt);
-            while(oldThought==newThought)
+            
+            int old=0;
+            int complete=0;
+            
+            
+            
+            do 
             {
+                 
+                 
                 _prompt=Giventhought();
+                
+                if(thoughts.Contains(_prompt))
+                {
+                    old=1;
+                }
+                else
+                {
+                    old=0;
+                    
+                    thoughts.Add(_prompt);
+                }
 
-            }
+                complete++;
+                if(complete>30)
+                {
+                    _prompt="";
+                    old=0;
+                }
+                
+
+            }while(old>0);
+
+           
+
+            Console.WriteLine(_prompt);
             WaitingAnimation();
             Console.WriteLine();
 
-            oldThought=_prompt;
+            
 
 
             currentTime = DateTime.Now;
         }
-
+        DisplayOutro();
 
     }
 

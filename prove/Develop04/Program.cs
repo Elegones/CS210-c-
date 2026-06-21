@@ -14,7 +14,7 @@ class Program
        inhale.BreathingLoop();
        */
 
-       Reflecting reflect=new Reflecting(". In this activity we will be reflecting, please follow along","Thank you for particpating in the",20,"reflectign");
+       Reflecting reflect=new Reflecting(". In this activity we will be reflecting, please follow along","Thank you for particpating in the",40,"reflectign");
        reflect.ReflectingLoop();
     }
 }

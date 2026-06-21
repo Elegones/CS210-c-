@@ -125,10 +125,12 @@ public void ReflectingLoop()
             }while(old>0);
 
            
-
+            if(_prompt!="")
+            {
             Console.WriteLine(_prompt);
+            }
             WaitingAnimation();
-            Console.WriteLine();
+           
 
             
 
@@ -136,6 +138,8 @@ public void ReflectingLoop()
             currentTime = DateTime.Now;
         }
         DisplayOutro();
+        WaitingAnimation();
+        Console.Clear();
 
     }
 

@@ -14,6 +14,9 @@ public void BreathingLoop()
     {
         
         DisplayIntro();
+        Console.Write("please wait");
+        WaitingAnimation();
+        Console.Clear();
 
         while(_time>0)
         {
@@ -54,6 +57,9 @@ public void BreathingLoop()
         }
 
         DisplayOutro();
+        WaitingAnimation();
+        Console.Clear();
+       
 
 
     }

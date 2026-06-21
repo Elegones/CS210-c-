@@ -46,7 +46,7 @@ class Program
       {
         topic="Reflecting";
         Console.WriteLine($"Thank you for chosing the {topic} activity");
-        intro=$" In this activatiy we will practice Reflecting on a prompt, this will help you rember what youve been through and how it has changed you.";
+        intro=$" In this activatiy we will practice Reflecting on a prompt, this will help you to view how this experance changed you.";
         outro="Thank you for particpating in the ";
         Console.WriteLine("how long would you like this activity to run for (in seconds)");
         time=int.Parse(Console.ReadLine());
@@ -61,7 +61,7 @@ class Program
       {
         topic="Listing";
         Console.WriteLine($"Thank you for chosing the {topic} activity");
-        intro=$" In this activity you  will be given a prompt to respond to as much as possible in the given time, this will help you think about the experiance you have went through.";
+        intro=$" In this activity you  will be given a prompt to respond to as much as possible in the given time,this activity will help you see whats going on in your life.";
         outro="Thank you for particpating in the ";
         Console.WriteLine("how long would you like this activity to run for (in seconds)");
         time=int.Parse(Console.ReadLine());

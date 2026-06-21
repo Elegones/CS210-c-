@@ -59,6 +59,7 @@ public void BreathingLoop()
         DisplayOutro();
         WaitingAnimation();
         Console.Clear();
+        
        
 
 

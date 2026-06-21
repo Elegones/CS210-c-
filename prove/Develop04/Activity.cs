@@ -9,19 +9,6 @@ public class  Activity
    
    
 
- 
-
-
-    
-
-    public Activity (int time)
-    {
-       
-        _time=time;
-        _timeUse=_time;
-        
-    }
-
        public Activity (string intro, string outro,int time,string topic)
     {
         _intro=intro;

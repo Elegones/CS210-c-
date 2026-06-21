@@ -8,22 +8,68 @@ class Program
     string topic;
     string outro;
     int time;
-    string prompt="";
     int choice=0;
 
     do
     {
+      
       Console.WriteLine("Menu:");
       Console.WriteLine(" 1: Breathing Activity");
       Console.WriteLine(" 2: Reflecting Activity");
       Console.WriteLine(" 3: Listing Activity");
       Console.WriteLine(" 5: exit");
+      choice=int.Parse(Console.ReadLine());
 
 
       if(choice==1)
       {
-        topic="Breathing activity";
+        Console.Clear();
+        
+
+        topic="Breathing";
+        Console.WriteLine($"Thank you for chosing the {topic} activity");
         intro=$"In this activatiy we will practice controling our breathing to relax";
+        outro="Thank you for particpating in the ";
+        Console.WriteLine("how long would you like this activity to run for");
+        time=int.Parse(Console.ReadLine());
+
+        Breathing  inhale = new Breathing( intro,  outro, time, topic);
+        inhale.BreathingLoop();
+
+      }
+
+      if(choice==2)
+      {
+        Console.Clear();
+        
+
+        topic="Reflecting";
+        Console.WriteLine($"Thank you for chosing the {topic} activity");
+        intro=$"In this activatiy we will practice Reflecting on a prompt";
+        outro="Thank you for particpating in the ";
+        Console.WriteLine("how long would you like this activity to run for");
+        time=int.Parse(Console.ReadLine());
+
+        Reflecting reflect=new Reflecting( intro,  outro, time, topic);
+        reflect.ReflectingLoop();
+
+      }
+
+      if(choice==3)
+      {
+        Console.Clear();
+        
+
+        topic="Listing";
+        Console.WriteLine($"Thank you for chosing the {topic} activity");
+        intro=$"In this activatiy we will be given a prompt and then list respose to prompt.";
+        outro="Thank you for particpating in the ";
+        Console.WriteLine("how long would you like this activity to run for");
+        time=int.Parse(Console.ReadLine());
+        Listing list = new Listing( intro,  outro, time, topic);
+        list.ListingLoop();
+
+        
 
       }
 
@@ -32,7 +78,7 @@ class Program
     
 
 
-      Activity  activity= new Activity(5);
+      //Activity  activity= new Activity(5);
       //activity.WaitingAnimation();
       /*  Activity  activity= new Activity(5);
 

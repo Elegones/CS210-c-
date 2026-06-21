@@ -36,7 +36,13 @@ public class Listing : Activity
 
     }
      public Listing(string intro, string outro,int time,string topic): base (intro,outro,time,topic) 
-{
+    {
+
+
+    }
+
+    public void ListingLoop()
+    {
          DisplayIntro();
          _prompt=GivenPrompt();
          WaitingAnimation();
@@ -63,9 +69,7 @@ public class Listing : Activity
         DisplayOutro();
         WaitingAnimation();
         Console.Clear();
-
-
-}
+    }
 
 
 }

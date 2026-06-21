@@ -45,12 +45,14 @@ public class Listing : Activity
     {
          DisplayIntro();
          _prompt=GivenPrompt();
-         WaitingAnimation();
+         WaitingAnimation(3);
          Console.Clear();
          Console.WriteLine("Write as many response as you can for the prompt");
          DisplayPrompts();
          
-         Console.WriteLine("Begin.");
+        Console.Write("Begin in: ");
+        CountDownAnimation(3);
+        Console.WriteLine();
 
 
         DateTime startTime = DateTime.Now;
@@ -67,7 +69,7 @@ public class Listing : Activity
         }
 
         DisplayOutro();
-        WaitingAnimation();
+        WaitingAnimation(3);
         Console.Clear();
     }
 

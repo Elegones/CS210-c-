@@ -22,7 +22,7 @@ public class Reflecting : Activity
         }
          if(Num==3)
         {
-            promt="Think about a person you care about";
+            promt="Think of a time where you were dealing with a trial";
         }
          if(Num==4)
         {
@@ -55,15 +55,15 @@ public class Reflecting : Activity
         }
          if(Num==3)
         {
-            thought="How does this affect you?";
+            thought="How did this experiance  affect you?";
         }
          if(Num==4)
         {
-            thought="Why did you go through this experiance?";
+            thought="Why do you think you  went through this experiance?";
         }
          if(Num==5)
         {
-            thought="If could change this experiance would you?";
+            thought="If you could change this experiance would you?";
         }
        
         
@@ -80,10 +80,13 @@ public void ReflectingLoop()
         _prompt=GivenPrompt();
        
          DisplayIntro();
-         WaitingAnimation();
+         WaitingAnimation(3);
          DisplayPrompts();
-         Console.WriteLine("enter any key when ready to reflect to continue");
+         Console.WriteLine("enter any key when ready to reflect ");
          Console.ReadLine();
+         Console.Write("Begin in: ");
+         CountDownAnimation(3);
+        
 
         DateTime startTime = DateTime.Now;
         DateTime futureTime = startTime.AddSeconds(_time);
@@ -130,7 +133,7 @@ public void ReflectingLoop()
             {
             Console.WriteLine(_prompt);
             }
-            WaitingAnimation();
+            WaitingAnimation(_time/4);
            
 
             
@@ -139,7 +142,7 @@ public void ReflectingLoop()
             currentTime = DateTime.Now;
         }
         DisplayOutro();
-        WaitingAnimation();
+        WaitingAnimation(3);
         Console.Clear();
 
     }

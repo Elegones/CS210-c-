@@ -6,7 +6,7 @@ public class  Activity
    protected int _time;
    protected string _prompt;
    protected int _timeUse;
-   
+  
    
 
        public Activity (string intro, string outro,int time,string topic)
@@ -60,14 +60,16 @@ public class  Activity
 
         
             Console.Write($"{cycle}"); // Replace it with the - character
+            
         }
+         Console.WriteLine();
     }
 
 
-    public void WaitingAnimation()
+    public void WaitingAnimation(int interval)
     {   
         DateTime startTime = DateTime.Now;
-        DateTime futureTime = startTime.AddSeconds(5);
+        DateTime futureTime = startTime.AddSeconds(interval);
         DateTime currentTime;
 
         do
@@ -89,6 +91,7 @@ public class  Activity
             Console.Write("\b \b"); // Replace it with the - character?
              currentTime = DateTime.Now;
         }while(currentTime<futureTime);
+         
 
     }
 
@@ -103,6 +106,6 @@ public class  Activity
     }
         public void DisplayOutro()
     {
-        Console.WriteLine($"{_outro} {_topic} activity");
+        Console.WriteLine($"{_outro} {_topic} activity, this activity was for {_timeUse} seconds");
     }
 }

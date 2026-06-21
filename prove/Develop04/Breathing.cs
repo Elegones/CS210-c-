@@ -14,8 +14,12 @@ public void BreathingLoop()
     {
         
         DisplayIntro();
-        Console.Write("please wait");
-        WaitingAnimation();
+        Console.WriteLine("please wait");
+        WaitingAnimation(3);
+        
+        Console.Write("Begin in: ");
+        CountDownAnimation(3);
+        _time=_time+3;
         Console.Clear();
 
         while(_time>0)
@@ -25,12 +29,12 @@ public void BreathingLoop()
 
                 Console.WriteLine($"Breathe in for 5 seconds ");
                 CountDownAnimation(5);
-                Console.WriteLine();
+               
     
 
                 Console.WriteLine($"Breathe out for 5 seconds");
                 CountDownAnimation(5);
-                Console.WriteLine();
+               
             }
 
              else 
@@ -44,20 +48,20 @@ public void BreathingLoop()
                 
                 Console.WriteLine($"Breathe in for {num} seconds ");
                 CountDownAnimation(num);
-                Console.WriteLine();
+                
                 
     
 
                 Console.WriteLine($"Breathe out for {nums} seconds");
                 CountDownAnimation(nums);
-                Console.WriteLine();
+               
             }
 
             
         }
 
         DisplayOutro();
-        WaitingAnimation();
+        WaitingAnimation(3);
         Console.Clear();
         
        

@@ -1,9 +1,15 @@
 public class Reflecting : Activity
 {
+     private string promt="";
     
-    public string GivenPrompt()
+
+        public Reflecting(string intro, string outro,int time,string topic): base (intro,outro,time,topic) 
     {
-        string promt="";
+         
+    }
+        public string GivenPrompt()
+    {
+      
         Random randomGenerator = new Random();
         int Num =  randomGenerator.Next(1,5);
         if(Num==1)
@@ -65,12 +71,7 @@ public class Reflecting : Activity
         
 
     }
-    public Reflecting(string intro, string outro,int time,string topic): base (intro,outro,time,topic) 
-{
-         
 
-
-}
 
 public void ReflectingLoop()
     {

@@ -6,15 +6,15 @@ class Program
     {
       Activity  activity= new Activity(5);
       //activity.WaitingAnimation();
-     // /*  Activity  activity= new Activity(5);
+      /*  Activity  activity= new Activity(5);
 
         Breathing  inhale = new Breathing(". In this activity we will be controling our breathing, please follow along","Thank you for particpating in the",11,"breathing");
         
 
        inhale.BreathingLoop();
-   //    */
+       */
 
-       //Reflecting reflect=new Reflecting(". In this activity we will be reflecting, please follow along","Thank you for particpating in the",5,"reflectign");
-       //reflect.ReflectingLoop();
+       Reflecting reflect=new Reflecting(". In this activity we will be reflecting, please follow along","Thank you for particpating in the",20,"reflectign");
+       reflect.ReflectingLoop();
     }
 }

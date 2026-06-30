@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-public class Goal
+public abstract class Goal
 {
     protected string _name;
     protected string _description;
@@ -14,25 +14,17 @@ public class Goal
 
     }
 
-    public virtual void Display()
-    {
-        
-    }
+    public abstract void Display();
+    
 
-    public virtual void GetSavedGoal()
-    {
-        
-    }
+    public abstract void GetSavedGoal();
+    
 
-    public virtual void SaveGoals()
-    {
-        
-    }
+    public abstract void SaveGoals();
+    
 
-    public virtual void CompleteGoal()
-    {
-        
-    }
+    public abstract int CompleteGoal();
+  
 
 
 

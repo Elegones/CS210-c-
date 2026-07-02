@@ -123,7 +123,7 @@ class Program
                 {
                     if(tasknum==choiceTask)
                     {
-                       score=+ goal.CompleteGoal();
+                       score+= goal.CompleteGoal();
                     }
                     tasknum++;
 

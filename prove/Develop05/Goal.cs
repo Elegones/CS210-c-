@@ -1,4 +1,5 @@
-
+using System;
+using System.IO; 
 
 public abstract class Goal
 {
@@ -20,7 +21,7 @@ public abstract class Goal
     public abstract void GetSavedGoal();
     
 
-    public abstract void SaveGoals();
+    public abstract string SaveGoals();
     
 
     public abstract int CompleteGoal();

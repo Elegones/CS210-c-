@@ -1,4 +1,6 @@
-
+using System;
+using System.Drawing;
+using System.IO; 
 
 public class Simple:Goal
 {
@@ -7,6 +9,12 @@ public class Simple:Goal
      public Simple (string name,string description,int points):base(name,description,points)
     { 
         
+
+    }
+
+       public Simple (string name,string description,int points,bool completed):base(name,description,points)
+    { 
+        _completed=completed;
 
     }
 
@@ -29,9 +37,9 @@ public class Simple:Goal
         
     }
 
-    public override void SaveGoals()
+    public override string SaveGoals()
     {
-        
+        return $"Simple^{_completed}^{_name}^{_description}^{_points}";
     }
 
     public override int CompleteGoal()

@@ -1,4 +1,5 @@
-using System.ComponentModel.DataAnnotations;
+using System;
+using System.IO; 
 
 public class CheckList:Goal
 {
@@ -9,6 +10,15 @@ public class CheckList:Goal
     { 
         _total=total;
         _bonus=bonus;
+
+    }
+
+
+    public CheckList (string name,string description,int points,int total,int bonus,int Count):base(name,description,points)
+    { 
+        _total=total;
+        _bonus=bonus;
+        _count=Count;
 
     }
 
@@ -31,9 +41,9 @@ public class CheckList:Goal
         
     }
 
-    public override void SaveGoals()
+    public override string SaveGoals()
     {
-        
+         return $"Checklist^{_name}^{_description}^{_points}^{_total}^{_bonus}^{_count}";
     }
 
    public override int CompleteGoal()

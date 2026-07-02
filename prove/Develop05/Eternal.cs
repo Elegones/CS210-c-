@@ -1,4 +1,5 @@
-
+using System;
+using System.IO; 
 
  public class Eternal:Goal
 {
@@ -19,10 +20,11 @@
         
     }
 
-    public override void SaveGoals()
+    public override string SaveGoals()
     {
-        
+        return $"Eternal^{_name}^{_description}^{_points}";
     }
+    
 
     public override int CompleteGoal()
     {

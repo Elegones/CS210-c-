@@ -1,10 +1,10 @@
 using System;
-
+using System.IO;
 class Program
 {
     static void Main(string[] args)
     {
-        int score=0;
+        int score = 0;
         List<Goal> tasks = new List<Goal>();
         int choice = 0;
         string name;
@@ -19,8 +19,8 @@ class Program
             Console.WriteLine(" 1: List Goals");
             Console.WriteLine(" 2: Add goal");
             Console.WriteLine(" 3: Record Event");
-            Console.WriteLine(" 4: Load Goals");
-            Console.WriteLine(" 5: save Goals");
+            Console.WriteLine(" 4: Save Goals");
+            Console.WriteLine(" 5: Load Goals");
             Console.WriteLine(" 6: Exit");
             choice = int.Parse(Console.ReadLine());
 
@@ -106,24 +106,24 @@ class Program
             if (choice == 3)
             {
                 Console.WriteLine("selesct which the goal number you want to record doing");
-                int i=-1;
+                int i = -1;
                 foreach (Goal goal in tasks)
                 {
                     i++;
-                    Console.Write($"{i}: ");    
+                    Console.Write($"{i}: ");
                     goal.Display();
 
 
                 }
 
-                int choiceTask=int.Parse(Console.ReadLine());
-                int tasknum=0;
+                int choiceTask = int.Parse(Console.ReadLine());
+                int tasknum = 0;
 
                 foreach (Goal goal in tasks)
                 {
-                    if(tasknum==choiceTask)
+                    if (tasknum == choiceTask)
                     {
-                       score+= goal.CompleteGoal();
+                        score += goal.CompleteGoal();
                     }
                     tasknum++;
 
@@ -132,8 +132,73 @@ class Program
 
 
 
+
             }
 
+            if (choice == 4)
+            {
+                string filename;
+                Console.WriteLine("enter file name.");
+                filename=Console.ReadLine();
+
+                using (StreamWriter OutputFile = new StreamWriter(filename))
+                {
+
+                    OutputFile.WriteLine(score);
+
+
+                    foreach (Goal trial in tasks)
+                    {
+
+                        OutputFile.WriteLine(trial.SaveGoals());
+                      
+
+                    }
+
+                }
+
+            }
+
+            if(choice==5)
+            {
+                string filename;
+                Console.WriteLine("enter file name.");
+                filename=Console.ReadLine();
+
+                using (StreamReader InputFile = new StreamReader(filename))
+                {
+                    string line;
+                    string [] data=new string[1];
+
+                    score=int.Parse(InputFile.ReadLine());
+
+                    while((line=InputFile.ReadLine())!= null)
+                    {
+                        data=line.Split('^');
+
+                        if(data[0]=="Simple")
+                        {
+                            Simple simp = new Simple(data[2], data[3], int.Parse(data[4]),bool.Parse(data[1]) );
+                            tasks.Add(simp); 
+                        }
+
+                        if(data[0]=="Eternal")
+                        {
+                            Eternal life = new Eternal( data[1], data[2],int.Parse(data[3]) );
+                            tasks.Add(life); 
+                        }
+                        
+                        if(data[0]=="Checklist")
+                        {
+                            CheckList cl=new CheckList( data[1], data[2],int.Parse(data[3]),int.Parse(data[4]),int.Parse(data[5]),int.Parse(data[6]) );
+                            tasks.Add(cl);
+                        }
+                    }
+
+                }
+                
+
+            }
         }
 
     }

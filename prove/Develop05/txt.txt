@@ -1,0 +1,5 @@
+20
+Simple^False^simp^good^21
+Simple^True^simp2^ good^1
+Checklist^check^list^5^3^20^1
+Eternal^life^long^3

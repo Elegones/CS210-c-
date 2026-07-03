@@ -12,9 +12,15 @@ class Program
         int points;
         int total;
         int bonus;
+        int sessionScore=0;
         while (choice != 6)
         {
             Console.WriteLine($"Total points:{score}");
+            if(score>sessionScore)
+            {
+                Console.WriteLine($"Current points:{sessionScore}");
+            }
+            
             Console.WriteLine("Menu:");
             Console.WriteLine(" 1: List Goals");
             Console.WriteLine(" 2: Add goal");
@@ -123,7 +129,9 @@ class Program
                 {
                     if (tasknum == choiceTask)
                     {
-                        score += goal.CompleteGoal();
+                        int x=goal.CompleteGoal();
+                        score += x;
+                        sessionScore+=x;
                     }
                     tasknum++;
 

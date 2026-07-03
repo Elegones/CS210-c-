@@ -15,10 +15,7 @@ using System.IO;
          Console.WriteLine($"{_name} {_description}");
     }
 
-     public override void GetSavedGoal()
-    {
-        
-    }
+ 
 
     public override string SaveGoals()
     {

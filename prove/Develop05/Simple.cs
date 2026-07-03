@@ -32,10 +32,7 @@ public class Simple:Goal
         Console.WriteLine($"{conditon} {_name} {_description}");
     }
 
-     public override void GetSavedGoal()
-    {
-        
-    }
+
 
     public override string SaveGoals()
     {

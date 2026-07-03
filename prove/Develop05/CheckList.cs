@@ -36,10 +36,7 @@ public class CheckList:Goal
         Console.WriteLine($"{conditon} {_name} {_description}");
     }
 
-     public override void GetSavedGoal()
-    {
-        
-    }
+
 
     public override string SaveGoals()
     {

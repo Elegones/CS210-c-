@@ -170,7 +170,7 @@ class Program
                     string line;
                     string [] data=new string[1];
 
-                    score=int.Parse(InputFile.ReadLine());
+                    score+=int.Parse(InputFile.ReadLine());
 
                     while((line=InputFile.ReadLine())!= null)
                     {

@@ -18,7 +18,7 @@ public abstract class Goal
     public abstract void Display();
     
 
-    public abstract void GetSavedGoal();
+   
     
 
     public abstract string SaveGoals();

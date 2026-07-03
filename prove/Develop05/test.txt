@@ -1,0 +1,5 @@
+18
+Simple^True^simple test^to test that this works correctly for simple goals^5
+Checklist^Checklist test^to test C Lists^10^2^15^1
+Eternal^eternal tests^to test eternaly^3
+Simple^False^simpleun^to test loading^1

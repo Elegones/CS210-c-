@@ -1,5 +1,4 @@
-20
-Simple^False^simp^good^21
-Simple^True^simp2^ good^1
-Checklist^check^list^5^3^20^1
-Eternal^life^long^3
+145803
+Simple^True^simp^find ^145678
+Checklist^go out^do activity^25^10^1000^1
+Eternal^service^help others^50

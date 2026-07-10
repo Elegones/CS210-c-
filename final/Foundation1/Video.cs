@@ -3,7 +3,7 @@ public class Video
    private string _author;
    private string _title;
    private int _length;
-    int num=0;
+   
 
    public List<Comments> _commentSection=new List<Comments>();
 
@@ -23,6 +23,21 @@ public class Video
             num=num+1;
         }
         return num;
+    }
+
+        public void Display()
+    {
+        Console.WriteLine($"Video:{_title}");
+        Console.WriteLine($"Creator:{_author}");
+        Console.WriteLine($"Length:{_length}");
+        Console.WriteLine($"Number of comments:{CommentCount()}");
+        foreach(Comments coms in _commentSection)
+        {
+            Console.WriteLine($"{coms._poster}: {coms._comment}");
+        }
+
+
+       Console.WriteLine();
     }
 
 

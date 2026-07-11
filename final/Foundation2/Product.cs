@@ -6,6 +6,22 @@ public class Product
     private int _amount;
 
 
+    public Product(string name,string ID,double price,int amount)
+    {
+        _name=name;
+        _id=ID;
+        _price=price;
+        _amount=amount;
+
+    }
+
+
+    public double ProductCost()
+    {
+        return _price*_amount;
+    }
+
+
     public double GetProductPrice()
     {
         return _price;
@@ -13,5 +29,13 @@ public class Product
    public double GetProductAmount()
     {
         return _amount;
+    }
+     public string GetProductName()
+    {
+        return _name;
+    }
+     public string GetProductID()
+    {
+        return _id;
     }
 }

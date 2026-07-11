@@ -5,6 +5,7 @@ public class Order
 
     public double TotalPrice()
     {
+        Address location=_customer.GetLocation();
         int shipingCost;
         double _totalPrice=0;
         foreach(Product item in _products)
@@ -14,7 +15,7 @@ public class Order
 
             _totalPrice += price*amount;
         }
-        if(Customer._location.Patriate()==true)
+        if(location.Patriate()==true)
         {
              shipingCost=5;
         }
@@ -25,6 +26,38 @@ public class Order
         _totalPrice+=shipingCost;
 
         return _totalPrice;
+    }
+
+    public string PackingLabel()
+    {
+        string productName;
+        string productID;
+        string packingLabel="";
+        foreach(Product item in _products)
+        {
+            productName=item.GetProductName();
+            productID=item.GetProductID();
+
+            packingLabel+=$"{productName},{productID}:";
+        
+        
+            
+        }
+        return packingLabel;
+    }
+
+    public string ShipingLabel()
+    {
+        string customerName=_customer.GetCName();
+        Address home;
+        home=_customer.GetLocation();
+
+        string label=$"Customer:{customerName}, Address:{home}";
+
+        return label;
+
+
+
     }
     
 }

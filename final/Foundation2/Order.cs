@@ -3,6 +3,16 @@ public class Order
     private List<Product>_products=new List<Product>();
     private Customer _customer;
 
+    public Order(Customer person)
+    {
+        _customer=person;
+    }
+
+    public void AddItem(Product item)
+    {
+        _products.Add(item);
+    }
+
     public double TotalPrice()
     {
         Address location=_customer.GetLocation();
@@ -38,7 +48,7 @@ public class Order
             productName=item.GetProductName();
             productID=item.GetProductID();
 
-            packingLabel+=$"{productName},{productID}:";
+            packingLabel+=$"Item:{productName},Item ID:{productID} \n";
         
         
             
@@ -51,8 +61,12 @@ public class Order
         string customerName=_customer.GetCName();
         Address home;
         home=_customer.GetLocation();
+        string street=home.GetStreet();
+        string city=home.GetCity();
+        string state=home.GetState();
+        string country=home.GetCountry();
 
-        string label=$"Customer:{customerName}, Address:{home}";
+        string label=$"Customer:{customerName}, Address:{street},{city},{state},{country}";
 
         return label;
 

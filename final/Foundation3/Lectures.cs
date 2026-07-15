@@ -11,5 +11,8 @@ class Lectures:Event
         _type="Lecture";
     }
 
-    
+        public void DisplayFullLecture()
+    {
+         Console.WriteLine($"{_type}:{_title} by {_speaker} \n Summary:{_description} \n Date:{_date} at {_time}\n Location:{_location},Total capacity{_capacity}");
+    }
 }

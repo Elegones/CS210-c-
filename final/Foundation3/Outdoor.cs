@@ -9,4 +9,9 @@ class Outdoor : Event
 
     }
 
+    public void DisplayFullOutdoorGathering()
+    {
+         Console.WriteLine($"Event:{_type}: {_title} \n Summary:{_description},Date:{_date},Time:{_time},Location:{_location},Conditions:{_weather}");
+    }
+
 }

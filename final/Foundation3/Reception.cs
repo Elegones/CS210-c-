@@ -9,4 +9,9 @@ class Reception : Event
 
     }
 
+    public void DisplayFullLecture()
+    {
+         Console.WriteLine($"Title:{_title},Summary:{_description},Date:{_date},Time:{_time},Event:{_type},Location:{_location},RSVP at:{_RSVP}");
+    }
+
 }

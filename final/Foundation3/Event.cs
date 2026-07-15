@@ -19,12 +19,12 @@ class Event
 
     public void DisplayShort()
     {
-        Console.WriteLine($"{_type},{_title},{_date}");
+        Console.WriteLine($" Event:{_type} ,Title:{_title},Date:{_date}");
     }
 
     public void DisplayStandard()
     {
-         Console.WriteLine($"{_title},{_description},{_date},{_time},{_location}");
+         Console.WriteLine($"{_title}\n Summary of Event:{_description}\n will take place on:{_date} at:{_time} \n Location:{_location}");
     }
 
 

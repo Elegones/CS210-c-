@@ -13,4 +13,21 @@ class Address
         _country=country;
     }
 
+    public string GetCountry()
+    {
+        return _country;
+    }
+     public string GetStreet()
+    {
+        return _street;
+    }
+     public string GetCity()
+    {
+        return _city;
+    }
+     public string GetState()
+    {
+        return _state;
+    }
+
 }

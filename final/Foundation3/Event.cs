@@ -19,12 +19,28 @@ class Event
 
     public void DisplayShort()
     {
-        Console.WriteLine($" Event:{_type} ,Title:{_title},Date:{_date}");
+        Console.WriteLine($" Event:{_type}: {_title}, Date:{_date}");
+        Console.WriteLine();
     }
 
     public void DisplayStandard()
     {
-         Console.WriteLine($"{_title}\n Summary of Event:{_description}\n will take place on:{_date} at:{_time} \n Location:{_location}");
+        
+
+         Console.WriteLine($"{_title}\n Summary of {_type}:{_description}\n will take place on:{_date} at:{_time} ");
+         DisplayAddress();
+         Console.WriteLine();
+    }
+
+    public void DisplayAddress()
+    {
+        string city=_location.GetCity();
+        string country=_location.GetCountry();
+        string state=_location.GetState();
+        string street=_location.GetStreet();
+
+        Console.WriteLine($" Address: {street}, {city}, {state}, {country}");
+         
     }
 
 

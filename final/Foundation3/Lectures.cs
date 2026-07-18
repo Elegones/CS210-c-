@@ -13,6 +13,9 @@ class Lectures:Event
 
         public void DisplayFullLecture()
     {
-         Console.WriteLine($"{_type}:{_title} by {_speaker} \n Summary:{_description} \n Date:{_date} at {_time}\n Location:{_location},Total capacity{_capacity}");
+        
+         Console.WriteLine($"{_type}:{_title} by {_speaker} \n Summary:{_description} \n Date:{_date} at {_time}\n Total capacity {_capacity}");
+         DisplayAddress();
+         Console.WriteLine();
     }
 }

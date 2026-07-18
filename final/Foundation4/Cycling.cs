@@ -6,24 +6,28 @@ class Cycling:Activity
    public Cycling(string date,double length,double speed):base(date,length)
     {
         _speed=speed;
-        _type="Biking";
+        _type="Cycling";
     }
 
     public override double Distance()
-    {
-        return (_speed*_length)/60;
+    {   double dist=(_speed*_length)/60;
+        dist=Math.Round(dist,2);
+        return dist;
     }
 
    public override double Pace()
     {
-        return 60/_speed;
+        double pace=60/_speed;
+        pace=Math.Round(pace,2);
+        return pace;
     }
 
        public override void GetSummary()
     {
-        Console.WriteLine($"{_type}:");
-        Console.WriteLine($"Speed:{_speed} mph");
-        Console.WriteLine($"Distance: {Distance()} Miles");
+        Console.Write($"{_date} ");
+        Console.Write($"{_type} ({_length} min)");
+        Console.Write($"-Distance: {Distance()} miles,");
+        Console.Write($" Speed:{_speed} mph, ");
         Console.WriteLine($"Pace:{Pace()} minutes per miles");
 
     }

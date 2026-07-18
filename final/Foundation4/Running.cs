@@ -12,20 +12,25 @@ class Running:Activity
 
     public override double speed()
     {
-        return (_distance/_length)*60;
+        double speed=(_distance/_length)*60;
+        speed=Math.Round(speed,2);
+        return speed ;
     }
 
    public override double Pace()
     {
         double speeds= speed();
-        return 60/speeds;
+        double pace=60/speeds;
+        pace=Math.Round(pace,2);
+        return pace;
     }
 
     public override void GetSummary()
-    {
-        Console.WriteLine($"{_type}:");
-        Console.WriteLine($"Speed: {speed()} mph");
-        Console.WriteLine($"Distance: {_distance}  Miles");
+    {   
+        Console.Write($"{_date} ");
+        Console.Write($"{_type} ({_length} min)-");
+        Console.Write($"Distance: {_distance} miles, ");
+        Console.Write($"Speed: {speed()} mph, ");
         Console.WriteLine($"Pace: {Pace()} minutes per miles");
 
     }

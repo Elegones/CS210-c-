@@ -11,7 +11,7 @@ class Outdoor : Event
 
     public void DisplayFullOutdoorGathering()
     {
-         Console.WriteLine($"Event:{_type}: {_title} \n Summary of {_type}: {_description}\nDate:{_date},Time:{_time}\n Conditions: it will be {_weather}");
+         Console.WriteLine($"{_type}: {_title} \n Summary of {_type}: {_description}\nDate:{_date},Time:{_time}\n Conditions: it will be {_weather}");
          DisplayAddress();
          Console.WriteLine();
     }

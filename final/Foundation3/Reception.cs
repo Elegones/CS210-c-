@@ -11,7 +11,7 @@ class Reception : Event
 
     public void DisplayFullLecture()
     {
-         Console.WriteLine($"Title:{_title}\n {_type}: {_description}\nDate:{_date},Time:{_time}\n ");
+         Console.WriteLine($"{_title}\n {_type}: {_description}\nDate:{_date},Time:{_time}\n ");
          DisplayAddress();
          Console.WriteLine($"RSVP at:{_RSVP}");
          Console.WriteLine();

@@ -21,7 +21,7 @@ class Program
         
 
         Address place3= new Address("New ave","Las Vegas","Nevada","USA");
-        Reception wedding=new Reception("Wedding","We are here today for marriage","May 1st 2029","4:20 pm",place3,"emai@gmail.com");
+        Reception wedding=new Reception("Wedding Recpetion","We are here today for marriage","May 1st 2029","4:20 pm",place3,"emai@gmail.com");
         wedding.DisplayFullLecture();
         wedding.DisplayShort();
         wedding.DisplayStandard();

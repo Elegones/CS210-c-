@@ -1,10 +1,12 @@
 class Running:Activity
 {
    private double _distance;
+   private string _type;
 
    public Running(string date,double length,double distance):base(date,length)
     {
         _distance=distance;
+        _type="Running";
     }
 
 
@@ -17,6 +19,15 @@ class Running:Activity
     {
         double speeds= speed();
         return 60/speeds;
+    }
+
+    public override void GetSummary()
+    {
+        Console.WriteLine($"{_type}:");
+        Console.WriteLine($"Speed: {speed()} mph");
+        Console.WriteLine($"Distance: {_distance}  Miles");
+        Console.WriteLine($"Pace: {Pace()} minutes per miles");
+
     }
 
 

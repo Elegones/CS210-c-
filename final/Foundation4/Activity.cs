@@ -26,6 +26,11 @@ class Activity
         return 0;
     }
 
+    public virtual void GetSummary()
+    {
+        
+    }
+
 
 
 }
